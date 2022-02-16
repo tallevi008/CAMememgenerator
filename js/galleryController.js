@@ -1,6 +1,5 @@
 'use strict';
 
-renderGallery();
 function renderGallery() {
     const imgsIds = getImgId();
 

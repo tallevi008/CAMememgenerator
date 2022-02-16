@@ -21,9 +21,19 @@
             </div>
             <div class="control-box">
                 <form>
-                    <label for="line-text"></label>
                     <input type="text" name="line-text" placeholder="write somthing">
                     <input type="submit" value="Send" onclick="onEnterLine(event,this.value)">
+                    <label><input type="color" name="font-color" title="Font color" value="#ffffff"
+                            onchange="onChangeColor(event,this.name,this.value)"></label>
+                    <label><input type="color" name="stroke-color" title="Stroke color"
+                            onchange="onChangeColor(event,this.name,this.value)"></label>
+
+                    <button name="font-increase" title="Increase font" onclick="onChangeFontSize(event,this.name)"> A+
+                    </button>
+                    <button name="font-decrease" title="Decrease font" onclick="onChangeFontSize(event,this.name)"> A-
+                    </button>
+                    <button name="switch-line" title="Switch line" onclick="onSwitchLine(event,this.name)"> Switch line
+                    </button>
                 </form>
             </div>
         </section>
@@ -36,3 +46,5 @@
 </body>
 
 </html>
+
+<form action=""></form>
