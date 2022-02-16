@@ -32,7 +32,7 @@ function drawText(x, y, meme) {
     gCtx.fillStyle = meme.color;
     gCtx.font = `${meme.size}px ${meme.font}`;
     gCtx.strokeText(meme.txt, x, y);
-    gCtx.textAlign = meme.align;
+    gCtx.textAlign = meme.alignges;
     gCtx.fillText(meme.txt, x, y);
 }
 
