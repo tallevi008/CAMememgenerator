@@ -1,0 +1,18 @@
+.main-layout{
+    max-width: 1280px;
+    max-height: 680px;
+
+}
+
+.header-layout{
+    margin: 21px 12px;
+}
+
+.grid-layout{
+    grid-template-columns: repeat(2, 25%);
+    grid-template-rows: repeat(2,25%);
+    gap: 10px;
+    width: 800px;
+    height: 800px;
+    margin: 50px auto;
+}
