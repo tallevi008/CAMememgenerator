@@ -13,8 +13,6 @@ function Oninit() {
 function renderMeme() {
     const meme = getMeme();
     drawImg(meme);
-
-
 }
 
 function drawImg(meme) {
@@ -29,10 +27,21 @@ function drawImg(meme) {
 
 function drawText(x, y, text) {
 
-    // gCtx.lineWidth = 1;
-    // gCtx.strokeStyle = 'red';
+    gCtx.lineWidth = 1;
+    gCtx.strokeStyle = 'red';
     gCtx.fillStyle = 'blue';
     gCtx.font = '20px Arial';
     gCtx.fillText(text, x, y);
-    // gCtx.strokeText(text, x, y);
+    gCtx.strokeText(text, x, y);
+}
+
+function onEnterLine(ev, line) {
+    ev.preventDefault();
+    var line = document.getElementsByName('line-text')[0];
+    setLineTxt(line.value);
+    line.value = '';
+    renderMeme();
+
+
+
 }

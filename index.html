@@ -20,7 +20,11 @@
                 <canvas width="300" height="300"></canvas>
             </div>
             <div class="control-box">
-
+                <form>
+                    <label for="line-text"></label>
+                    <input type="text" name="line-text" placeholder="write somthing">
+                    <input type="submit" value="Send" onclick="onEnterLine(event,this.value)">
+                </form>
             </div>
         </section>
     </header>

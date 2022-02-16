@@ -19,12 +19,14 @@ var gMeme = {
     ]
 }
 
-
-
 function getMeme() {
     return gMeme;
 }
 
 function getImgForDisplay(imgId) {
     return gImgs.find(img => imgId === img.id);
+}
+
+function setLineTxt(line) {
+    gMeme.lines[0].txt = line;
 }
