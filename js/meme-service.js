@@ -1,9 +1,13 @@
 'use strict';
 
 var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
-var gImgs = [{ id: 1, url: 'img/meme-imgs/1.jpg', keywords: ['funny', 'plitical'] }];
+
+var gImgs = [
+    { id: 1, url: 'img/meme-imgs/1.jpg', keywords: ['funny', 'plitical'] }
+];
+
 var gMeme = {
-    selectedImgId: 5,
+    selectedImgId: 1,
     selectedLineIdx: 0,
     lines: [
         {
@@ -15,7 +19,12 @@ var gMeme = {
     ]
 }
 
-function getImgForDisplay() {
-    console.log(gImgs[0].url);
-    return gImgs[0].url;
+
+
+function getMeme() {
+    return gMeme;
+}
+
+function getImgForDisplay(imgId) {
+    return gImgs.find(img => imgId === img.id);
 }

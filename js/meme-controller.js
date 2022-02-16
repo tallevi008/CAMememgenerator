@@ -2,6 +2,7 @@
 
 var gElCanvas;
 var gCtx;
+var gMeme;
 
 function Oninit() {
     gElCanvas = document.querySelector('canvas');
@@ -10,15 +11,28 @@ function Oninit() {
 }
 
 function renderMeme() {
-    drawImg();
+    const meme = getMeme();
+    drawImg(meme);
+
 
 }
 
-function drawImg() {
+function drawImg(meme) {
     var img = new Image();
-    img.src = getImgForDisplay();
-
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
+        drawText(50, 50, meme.lines[0].txt);
     };
+    img.src = `${getImgForDisplay(meme.selectedImgId).url}`;
+}
+
+
+function drawText(x, y, text) {
+
+    // gCtx.lineWidth = 1;
+    // gCtx.strokeStyle = 'red';
+    gCtx.fillStyle = 'blue';
+    gCtx.font = '20px Arial';
+    gCtx.fillText(text, x, y);
+    // gCtx.strokeText(text, x, y);
 }
