@@ -19,20 +19,21 @@ function drawImg(meme) {
     var img = new Image();
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
-        drawText(50, 50, meme.lines[0].txt);
+        drawText(50, 50, meme.lines[0]);
     };
     img.src = `${getImgForDisplay(meme.selectedImgId).url}`;
 }
 
 
-function drawText(x, y, text) {
+function drawText(x, y, meme) {
 
     gCtx.lineWidth = 1;
-    gCtx.strokeStyle = 'red';
-    gCtx.fillStyle = 'blue';
-    gCtx.font = '20px Arial';
-    gCtx.fillText(text, x, y);
-    gCtx.strokeText(text, x, y);
+    gCtx.strokeStyle = meme.strokeStyle;
+    gCtx.fillStyle = meme.color;
+    gCtx.font = `${meme.size}px ${meme.font}`;
+    gCtx.strokeText(meme.txt, x, y);
+    gCtx.textAlign = meme.align;
+    gCtx.fillText(meme.txt, x, y);
 }
 
 function onEnterLine(ev, line) {

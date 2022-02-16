@@ -11,10 +11,12 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
-            txt: 'I sometimes eat Falafel',
+            txt: '',
             size: 20,
-            align: 'left',
-            color: 'red'
+            align: 'end',
+            color: 'white',
+            font: 'Impact',
+            'storke-style': 'black'
         }
     ]
 }
