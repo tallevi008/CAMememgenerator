@@ -4,12 +4,11 @@ renderGallery();
 function renderGallery() {
     const imgsIds = getImgId();
 
-    var htmlStr = imgsIds.forEach(imgId => {
-        `<img onclick="onImgSelect(${imgId})" src="img/meme-imgs/1.jpg" alt= "pic1">`
+    var htmlStr = imgsIds.map(imgId => {
+        return `<img onclick="onImgSelect(${imgId})" src="img/meme-imgs/${imgId}.jpg" alt= "pic${imgId}">`
     });
-    console.log(htmlStr);
 
-    // document.querySelector('.gallery-container').innerHTML = htmlStr.join('');
+    document.querySelector('.gallery-container').innerHTML = htmlStr.join('');
 }
 
 function onImgSelect(imgId) {
