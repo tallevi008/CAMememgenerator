@@ -19,15 +19,6 @@ var gMeme = {
             font: 'Impact',
             storkeStyle: 'black',
             pos: { x: null, y: null }
-        },
-        {
-            txt: 'Line 2',
-            size: 20,
-            align: 'left',
-            color: 'white',
-            font: 'Impact',
-            storkeStyle: 'black',
-            pos: { x: null, y: null }
         }
 
     ]
@@ -66,11 +57,33 @@ function setFontSize(diff) {
     memeAtrr.size += diff;
 }
 
+function addLine() {
+    (gMeme.lines).push({
+        txt: 'New Line',
+        size: 20,
+        align: 'left',
+        color: 'white',
+        font: 'Impact',
+        storkeStyle: 'black',
+        pos: { x: null, y: null }
+    })
+
+    //to switch to the new line
+    gMeme.selectedLineIdx = (gMeme.lines).length - 1;
+};
+
+function removeLine() {
+    (gMeme.lines).splice(gMeme.selectedLineIdx, 1);
+    //to switch to the previos line
+    gMeme.selectedLineIdx = (gMeme.lines).length - 1;
+}
+
 function setLineSwitch() {
+    if (!(gMeme.lines).length) return null;
     if (gMeme.selectedLineIdx < (gMeme.lines).length - 1)
         gMeme.selectedLineIdx++;
     else gMeme.selectedLineIdx = 0;
-    return gMeme.lines[gMeme.selectedLineIdx].pos;
+    return (gMeme.lines.length) ? gMeme.lines[gMeme.selectedLineIdx] : null;
 }
 
 // Array of images id to use when rendering the gallery

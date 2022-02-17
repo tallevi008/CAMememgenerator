@@ -4,12 +4,22 @@ var gElCanvas;
 var gCtx;
 var gMeme;
 
-//   const center = { x: gElCanvas.width / 2, y: gElCanvas.height / 2 }
-
 function Oninit() {
     gElCanvas = document.querySelector('canvas');
     gCtx = gElCanvas.getContext('2d');
+    resizeCanvas();
     renderGallery();
+
+    window.addEventListener('resize', () => {
+        resizeCanvas();
+    })
+}
+
+function resizeCanvas() {
+    var elContainer = document.querySelector('.canvans-container')
+    gElCanvas.width = elContainer.offsetWidth;
+    gElCanvas.height = elContainer.offsetHeight;
+
 }
 
 function renderMeme() {
@@ -22,18 +32,19 @@ function drawImg(meme) {
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
 
-        (meme.lines).forEach((line, idx) => {
-            drawText(gElCanvas.width / division, gElCanvas.height / division, line);
-            //update line pos on canvas after drowing
-            onSetLinePos(gElCanvas.width / division, gElCanvas.height / division, idx);
-            division--;
-        }, division = 4);
+        (meme.lines).forEach((line, idx, lines) => {
+            if (idx === 0) drawText(gElCanvas.width / 2, 100, line, idx);
+            else if (idx === 1)
+                drawText(gElCanvas.width / 2, 700, line, idx);
+            else drawText(gElCanvas.width / 2, gElCanvas.height / 2, line, idx);
+
+
+        });
     };
     img.src = `${getImgForDisplay(meme.selectedImgId).url}`;
 }
 
-
-function drawText(x, y, meme) {
+function drawText(x, y, meme, lineIdx) {
 
     gCtx.lineWidth = 4;
     gCtx.strokeStyle = meme.storkeStyle;
@@ -42,6 +53,9 @@ function drawText(x, y, meme) {
     gCtx.strokeText(meme.txt, x, y);
     gCtx.textAlign = meme.alignges;
     gCtx.fillText(meme.txt, x, y);
+
+    //update line pos on canvas after drowing
+    onSetLinePos(x, y, lineIdx);
 }
 
 
@@ -67,7 +81,21 @@ function onChangeFontSize(ev, fontSizeChange) {
     else setFontSize(-1);
 }
 
+function onAddLine(ev) {
+    ev.preventDefault();
+    addLine();
+    renderMeme();
+}
+
+function onRemoveLine(ev) {
+    ev.preventDefault();
+    removeLine();
+    renderMeme();
+}
+
 function onSwitchLine(ev) {
     ev.preventDefault();
-    const pos = setLineSwitch();
+    const memeLine = setLineSwitch();
+    if (!memeLine) return;
+    openModal(memeLine);
 }
