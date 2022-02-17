@@ -12,13 +12,24 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
-            txt: '',
+            txt: 'Line 1',
             size: 20,
-            align: 'end',
+            align: 'left',
             color: 'white',
             font: 'Impact',
-            storkeStyle: 'black'
+            storkeStyle: 'black',
+            pos: { x: null, y: null }
+        },
+        {
+            txt: 'Line 2',
+            size: 20,
+            align: 'left',
+            color: 'white',
+            font: 'Impact',
+            storkeStyle: 'black',
+            pos: { x: null, y: null }
         }
+
     ]
 }
 
@@ -33,7 +44,8 @@ function getImgForDisplay(imgId) {
 
 //Upadte gMeme text line
 function setLineTxt(line) {
-    gMeme.lines[0].txt = line;
+    var lineIdx = gMeme.selectedLineIdx;
+    gMeme.lines[lineIdx].txt = line;
 }
 
 //updating the id of the selcted img in the gMeme object
@@ -54,7 +66,19 @@ function setFontSize(diff) {
     memeAtrr.size += diff;
 }
 
+function setLineSwitch() {
+    if (gMeme.selectedLineIdx < (gMeme.lines).length - 1)
+        gMeme.selectedLineIdx++;
+    else gMeme.selectedLineIdx = 0;
+    return gMeme.lines[gMeme.selectedLineIdx].pos;
+}
+
 // Array of images id to use when rendering the gallery
 function getImgId() {
     return gImgs.map(img => img.id);
+}
+
+function onSetLinePos(x, y, lineIdx) {
+    gMeme.lines[lineIdx].pos.x = x;
+    gMeme.lines[lineIdx].pos.y = y;
 }

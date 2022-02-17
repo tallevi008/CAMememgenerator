@@ -4,6 +4,8 @@ var gElCanvas;
 var gCtx;
 var gMeme;
 
+//   const center = { x: gElCanvas.width / 2, y: gElCanvas.height / 2 }
+
 function Oninit() {
     gElCanvas = document.querySelector('canvas');
     gCtx = gElCanvas.getContext('2d');
@@ -19,7 +21,13 @@ function drawImg(meme) {
     var img = new Image();
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
-        drawText(50, 50, meme.lines[meme.selectedLineIdx]);
+
+        (meme.lines).forEach((line, idx) => {
+            drawText(gElCanvas.width / division, gElCanvas.height / division, line);
+            //update line pos on canvas after drowing
+            onSetLinePos(gElCanvas.width / division, gElCanvas.height / division, idx);
+            division--;
+        }, division = 4);
     };
     img.src = `${getImgForDisplay(meme.selectedImgId).url}`;
 }
@@ -36,6 +44,7 @@ function drawText(x, y, meme) {
     gCtx.fillText(meme.txt, x, y);
 }
 
+
 function onEnterLine(ev, line) {
     ev.preventDefault();
     var line = document.getElementsByName('line-text')[0];
@@ -44,8 +53,7 @@ function onEnterLine(ev, line) {
     renderMeme();
 }
 
-function onChangeColor(ev, colorPurpose, color) {
-    ev.preventDefault();
+function onChangeColor(colorPurpose, color) {
     if (colorPurpose === 'font-color')
         setColor('color', color);
     else if (colorPurpose === 'stroke-color')
@@ -57,4 +65,9 @@ function onChangeFontSize(ev, fontSizeChange) {
     if (fontSizeChange === 'font-increase')
         setFontSize(1);
     else setFontSize(-1);
+}
+
+function onSwitchLine(ev) {
+    ev.preventDefault();
+    const pos = setLineSwitch();
 }
