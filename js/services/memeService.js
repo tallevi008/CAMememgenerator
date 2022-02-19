@@ -4,7 +4,23 @@ var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 
 var gImgs = [
     { id: 1, url: 'img/meme-imgs/1.jpg', keywords: ['funny', 'plitical'] },
-    { id: 2, url: 'img/meme-imgs/2.jpg', keywords: ['cute', 'animals'] }
+    { id: 2, url: 'img/meme-imgs/2.jpg', keywords: ['cute', 'animals'] },
+    { id: 3, url: 'img/meme-imgs/2.jpg', keywords: ['cute', 'animals'] },
+    { id: 4, url: 'img/meme-imgs/2.jpg', keywords: ['cute', 'animals'] },
+    { id: 5, url: 'img/meme-imgs/2.jpg', keywords: ['cute', 'animals'] },
+    { id: 6, url: 'img/meme-imgs/2.jpg', keywords: ['cute', 'animals'] },
+    { id: 7, url: 'img/meme-imgs/2.jpg', keywords: ['cute', 'animals'] },
+    { id: 8, url: 'img/meme-imgs/2.jpg', keywords: ['cute', 'animals'] },
+    { id: 9, url: 'img/meme-imgs/2.jpg', keywords: ['cute', 'animals'] },
+    { id: 10, url: 'img/meme-imgs/2.jpg', keywords: ['cute', 'animals'] },
+    { id: 11, url: 'img/meme-imgs/2.jpg', keywords: ['cute', 'animals'] },
+    { id: 12, url: 'img/meme-imgs/2.jpg', keywords: ['cute', 'animals'] },
+    { id: 13, url: 'img/meme-imgs/2.jpg', keywords: ['cute', 'animals'] },
+    { id: 14, url: 'img/meme-imgs/2.jpg', keywords: ['cute', 'animals'] },
+    { id: 15, url: 'img/meme-imgs/2.jpg', keywords: ['cute', 'animals'] },
+    { id: 16, url: 'img/meme-imgs/2.jpg', keywords: ['cute', 'animals'] },
+    { id: 17, url: 'img/meme-imgs/2.jpg', keywords: ['cute', 'animals'] },
+    { id: 18, url: 'img/meme-imgs/2.jpg', keywords: ['cute', 'animals'] },
 ];
 
 var gMeme = {
