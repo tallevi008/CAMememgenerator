@@ -8,9 +8,31 @@ function renderGallery() {
     });
 
     document.querySelector('.gallery-container').innerHTML = htmlStr.join('');
+    hideEditor();
 }
 
 function onImgSelect(imgId) {
     setImg(imgId);
     renderMeme();
 }
+
+function showGallery() {
+    const elMemeGenerator = document.querySelector('.meme-generator-container');
+
+    elMemeGenerator.classList.add('hide');
+}
+
+function hideGallery() {
+
+    const elMemeGenerator = document.querySelector('.gallery-container');
+
+    elMemeGenerator.classList.add('hide');
+};
+
+function showGallery() {
+    hideEditor();
+    const elMemeGenerator = document.querySelector('.gallery-container ');
+
+    elMemeGenerator.classList.remove('hide')ף
+
+};

@@ -7,25 +7,15 @@ var gMeme;
 function Oninit() {
     gElCanvas = document.querySelector('canvas');
     gCtx = gElCanvas.getContext('2d');
-    resizeCanvas();
     renderGallery();
-
-    window.addEventListener('resize', () => {
-        resizeCanvas();
-    })
-}
-
-function resizeCanvas() {
-    var elContainer = document.querySelector('.canvans-container')
-    gElCanvas.width = elContainer.offsetWidth;
-    gElCanvas.height = elContainer.offsetHeight;
-
 }
 
 function renderMeme() {
     const meme = getMeme();
+    showEditor();
     drawImg(meme);
 }
+
 
 function drawImg(meme) {
     var img = new Image();
@@ -33,9 +23,9 @@ function drawImg(meme) {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
 
         (meme.lines).forEach((line, idx, lines) => {
-            if (idx === 0) drawText(gElCanvas.width / 2, 100, line, idx);
+            if (idx === 0) drawText(gElCanvas.width / 2, 30, line, idx);
             else if (idx === 1)
-                drawText(gElCanvas.width / 2, 700, line, idx);
+                drawText(gElCanvas.width / 2, gElCanvas.height - 30, line, idx);
             else drawText(gElCanvas.width / 2, gElCanvas.height / 2, line, idx);
 
 
@@ -59,11 +49,11 @@ function drawText(x, y, meme, lineIdx) {
 }
 
 
-function onEnterLine(ev, line) {
+function onEnterLine(ev) {
     ev.preventDefault();
-    var line = document.getElementsByName('line-text')[0];
-    setLineTxt(line.value);
-    line.value = '';
+    var elLine = document.getElementsByName('line-text')[0];
+    setLineTxt(elLine.value);
+    elLine.value = '';
     renderMeme();
 }
 
@@ -83,7 +73,9 @@ function onChangeFontSize(ev, fontSizeChange) {
 
 function onAddLine(ev) {
     ev.preventDefault();
-    addLine();
+    const lineTxt = addLine();
+    var elLine = document.getElementsByName('line-text')[0];
+    elLine.value = '';
     renderMeme();
 }
 
@@ -97,5 +89,20 @@ function onSwitchLine(ev) {
     ev.preventDefault();
     const memeLine = setLineSwitch();
     if (!memeLine) return;
-    openModal(memeLine);
+    var elLine = document.getElementsByName('line-text')[0];
+    elLine.value = memeLine.txt;
+
+}
+
+function showEditor() {
+    const elMemeGenerator = document.querySelector('.meme-generator-container');
+
+    elMemeGenerator.classList.remove('hide');
+    hideGallery();
+}
+
+function hideEditor() {
+    const elMemeGenerator = document.querySelector('.meme-generator-container');
+
+    elMemeGenerator.classList.add('hide');
 }
