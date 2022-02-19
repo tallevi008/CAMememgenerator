@@ -1,7 +1,15 @@
 /* Setup */
+@import'setup/vars.css';
+@import'setup/typography.css';
 
 /* Basic */
+@import'basic/base.css';
+@import'basic/layouts.css';
+@import'basic/helpers.css';
 
 /*Components */
+@import'components/header-container.css';
+@import'components/meme-generator-container.css';
+@import'components/form.css';
 
 

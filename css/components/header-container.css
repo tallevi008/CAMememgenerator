@@ -1,0 +1,45 @@
+.main-header{
+    background-image: linear-gradient(to left,var(--header-col1),var(--header-col2));
+    border-radius: 3.75rem;
+    height: 4.56rem ;
+    margin: 0.8rem;
+    
+}
+
+.main-header> *{
+color:white;
+font-family: pop-medium,serif;
+}
+
+.main-header .logo{
+    font-size: 1.80rem;
+    text-transform: uppercase;
+    margin-inline-start: 7.62rem;
+}
+.main-header .nav-container{
+    width: 40%;
+}
+
+.main-header .main-nav{
+    width: inherit;
+}
+
+
+.main-header .main-nav li{
+    margin-inline-end: 3.87rem;
+}
+
+.main-header a{
+    text-decoration: none;
+    color: inherit;
+    font-size:1.31rem;
+    text-align: end;
+}
+
+.main-header .main-nav a:hover {
+    color: #ded7d7;
+}
+
+
+
+

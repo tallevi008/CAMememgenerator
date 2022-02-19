@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    line-height: 1.87rem ;
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #223;
+}
+

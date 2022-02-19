@@ -1,0 +1,53 @@
+form> *{
+font-family: pop-bold;
+border-radius: 10px;
+}
+
+form > [name="line-text"]{
+    grid-row: 1;
+    grid-column: 2/ span 3;
+    text-align: center;
+}
+
+form > [name="switch-line"]{
+    grid-row: 2;
+    grid-column: 2;
+    color: #EBEEF3;
+    background-color:  #0C98BB;
+}
+
+form > [name="add-line"]{
+    grid-row: 2;
+    grid-column: 3;
+    background-color:  #37B34A;
+    color: #EBEEF3;
+}
+
+form > [name="remove-line"]{
+    grid-row: 2;
+    grid-column: 4;
+    color: #EBEEF3;
+   background-color: #CF1D37 ;
+
+}    
+
+form > [name="font-increase"]{
+    grid-row: 3;
+    grid-column: 2;
+}
+form > [name="font-decrease"]{
+    grid-row: 3;
+    grid-column: 3;
+}
+
+form > [name="stroke-color"]{
+    grid-row: 3;
+    grid-column: 4;
+    justify-self: center;
+}
+form > [name="font-color"]{
+    grid-row: 3;
+    grid-column: 5;
+    justify-self: flex-start;
+}
+

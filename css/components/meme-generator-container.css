@@ -1,0 +1,27 @@
+
+
+.meme-generator-container .canvans-container{
+grid-row:1/span 3;
+grid-column:1;
+border-radius: 2.18rem;
+align-self: center;
+justify-self: center;
+
+}
+.meme-generator-container canvas{
+    border-radius: inherit;
+   
+}
+
+
+.meme-generator-container .control-box{
+    grid-row:1/span 3;
+    grid-column:2;
+    background-color: rgba(235, 238, 243, 0.2);
+    border-radius: 2.18rem;
+    width: 31.25rem;
+    height: 31.25rem;
+
+
+   
+}

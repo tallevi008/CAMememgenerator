@@ -1,0 +1,23 @@
+.main-layout{
+    max-width: 77.68rem;
+    max-height: 35.37rem;
+    margin: 0 1rem;
+}
+
+.meme-generator-layout{
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(2,1fr);
+    margin: 1.8rem auto;
+    height: inherit;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.form-layout {
+  height: 100%;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(5,1fr);
+    column-gap: 0.31rem;
+    align-items: center;
+}
