@@ -33,6 +33,6 @@ function showGallery() {
     hideEditor();
     const elMemeGenerator = document.querySelector('.gallery-container ');
 
-    elMemeGenerator.classList.remove('hide')ף
+    elMemeGenerator.classList.remove('hide');
 
 };

@@ -7,6 +7,7 @@ var gMeme;
 function Oninit() {
     gElCanvas = document.querySelector('canvas');
     gCtx = gElCanvas.getContext('2d');
+    // hideEditor();
     renderGallery();
 }
 
@@ -26,7 +27,9 @@ function drawImg(meme) {
             if (idx === 0) drawText(gElCanvas.width / 2, 30, line, idx);
             else if (idx === 1)
                 drawText(gElCanvas.width / 2, gElCanvas.height - 30, line, idx);
-            else drawText(gElCanvas.width / 2, gElCanvas.height / 2, line, idx);
+            else {
+                drawText(gElCanvas.width / 2, gElCanvas.height / 2, line, idx)
+            };
 
 
         });
@@ -73,7 +76,7 @@ function onChangeFontSize(ev, fontSizeChange) {
 
 function onAddLine(ev) {
     ev.preventDefault();
-    const lineTxt = addLine();
+    addLine();
     var elLine = document.getElementsByName('line-text')[0];
     elLine.value = '';
     renderMeme();
