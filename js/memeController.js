@@ -7,8 +7,14 @@ var gMeme;
 function Oninit() {
     gElCanvas = document.querySelector('canvas');
     gCtx = gElCanvas.getContext('2d');
-    // hideEditor();
     renderGallery();
+
+    // window.addEventListener('resize', () => {
+    //     resizeCanvas();
+    //     console.log('resize?');
+    //     renderMeme();
+    // })
+
 }
 
 function renderMeme() {
@@ -16,7 +22,6 @@ function renderMeme() {
     showEditor();
     drawImg(meme);
 }
-
 
 function drawImg(meme) {
     var img = new Image();
@@ -109,3 +114,10 @@ function hideEditor() {
 
     elMemeGenerator.classList.add('hide');
 }
+
+// function resizeCanvas() {
+    // var elContainer = document.querySelector('.canvans-container');
+    // Note: changing the canvas dimension this way clears the canvas
+    // gElCanvas.width = elContainer.offsetWidth;
+    // Unless needed, better keep height fixed.
+    // gElCanvas.height = elContainer.offsetHeight;}

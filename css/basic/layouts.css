@@ -8,6 +8,7 @@
     grid-template-rows: repeat(3,1fr);
     grid-template-columns: repeat(2,1fr);
     margin: 1.8rem auto;
+    column-gap: 0.81rem;
     height: inherit;
     align-items: center;
     justify-content: center;
@@ -26,7 +27,7 @@
 .gallery-container{
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-auto-rows: max-content;
-    gap: 0.31rem;
+    gap: 0.51rem;
     margin: 0.81rem auto;
     padding: 0.70rem;
     height: calc(inherit-10px);

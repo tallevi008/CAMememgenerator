@@ -6,49 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tal meme generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body onload="Oninit()">
     <header>
-        <section class="header-container main-layout">
-            <!-- <img src="img/Logo/LOGO.png" alt="Logo"> -->
-        </section>
-        <section class="gallery-container"></section>
-        <section class="meme-generator-caontainer">
-            <div class="canvans-container">
-                <canvas width="300" height="300"></canvas>
-            </div>
-            <div class="control-box">
-                <form>
-                    <input type="text" name="line-text" placeholder="write somthing">
-                    <input type="submit" value="Send" onclick="onEnterLine(event,this.value)">
-                    <label><input type="color" name="font-color" title="Font color" value="#ffffff"
-                            onchange="onChangeColor(this.name,this.value)"></label>
-                    <label><input type="color" name="stroke-color" title="Stroke color"
-                            onchange="onChangeColor(this.name,this.value)"></label>
-
-                    <button name="font-increase" title="Increase font" onclick="onChangeFontSize(event,this.name)"> A+
-                    </button>
-                    <button name="font-decrease" title="Decrease font" onclick="onChangeFontSize(event,this.name)"> A-
-                    </button>
-                    <button name="switch-line" title="Switch line" onclick="onSwitchLine(event)"> Switch line
-                    </button>
-                    <button name="add-line" title="Add line" onclick="onAddLine(event)"> Add line
-                    </button>
-                    <button name="remove-line" title="Add line" onclick="onRemoveLine(event)"> Remove line
-                    </button>
-                </form>
-            </div>
+        <section class="main-header flex space-between align-center">
+            <div class="logo">logo</div>
+            <nav class="nav-container">
+                <ul class="main-nav clean-list flex header-layout">
+                    <li><a href="#" onclick="showGallery();">Gallery </a></li>
+                    <li><a href="#"> About</a></li>
+                </ul>
+            </nav>
         </section>
     </header>
+    <section class="meme-generator-container main-layout grid meme-generator-layout">
+        <div class="canvans-container">
+            <canvas width="500" height="500"></canvas>
+        </div>
+        <div class="control-box">
+            <form class="grid form-layout">
+                <input type="text" name="line-text" placeholder="write somthing">
+                <input type="submit" value="Send" style="display:none;" onclick="onEnterLine(event,this.value)">
+                <input type="color" name="font-color" title="Font color" value="#ffffff"
+                    onchange="onChangeColor(this.name,this.value)">
 
+                <input type="color" name="stroke-color" title="Stroke color"
+                    onchange="onChangeColor(this.name,this.value)">
+                <button name="font-increase" title="Increase font" onclick="onChangeFontSize(event,this.name)"> A+
+                </button>
+                <button name="font-decrease" title="Decrease font" onclick="onChangeFontSize(event,this.name)"> A-
+                </button>
+                <button name="switch-line" title="Switch line" onclick="onSwitchLine(event)"> ↑ ↓
+                </button>
+                <button name="add-line" title="Add line" onclick="onAddLine(event)"> +
+                </button>
+                <button name="remove-line" title="Remove line" onclick="onRemoveLine(event)"> <i
+                        class="fa fa-trash-o"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+    <section class="gallery-container grid"></section>
     <footer></footer>
     <script src="js\services\memeService.js"></script>
-    <script src="js/memeController.js"></script>
     <script src="js/galleryController.js"></script>
+    <script src="js/memeController.js"></script>
 </body>
 
 </html>
-
-<form action=""></form>
