@@ -60,16 +60,16 @@ function drawText(x, y, meme, lineIdx) {
 function onEnterLine(ev) {
     ev.preventDefault();
     var elLine = document.getElementsByName('line-text')[0];
-    setLineTxt(elLine.value);
+    setMemeAttr('txt', elLine.value);
     elLine.value = '';
     renderMeme();
 }
 
 function onChangeColor(colorPurpose, color) {
     if (colorPurpose === 'font-color')
-        setColor('color', color);
+        setMemeAttr('color', color);
     else if (colorPurpose === 'stroke-color')
-        setColor('storkeStyle', color);
+        setMemeAttr('storkeStyle', color);
 }
 
 function onChangeFontSize(ev, fontSizeChange) {
@@ -101,6 +101,8 @@ function onSwitchLine(ev) {
     elLine.value = memeLine.txt;
 
 }
+
+
 
 function showEditor() {
     const elMemeGenerator = document.querySelector('.meme-generator-container');
