@@ -26,18 +26,7 @@ var gImgs = [
 var gMeme = {
     selectedImgId: 0,
     selectedLineIdx: 0,
-    lines: [
-        {
-            txt: 'Line 1',
-            size: 20,
-            align: 'left',
-            color: 'white',
-            font: 'Impact',
-            storkeStyle: 'black',
-            pos: { x: null, y: null }
-        }
-
-    ]
+    lines: []
 }
 
 function getMeme() {
@@ -69,19 +58,28 @@ function setFontSize(diff) {
 }
 
 function addLine() {
+    var idx = gMeme.lines.length;
     (gMeme.lines).push({
-        txt: 'New Line',
+        txt: `New Line${idx + 1}`,
         size: 20,
         align: 'left',
         color: 'white',
         font: 'Impact',
         storkeStyle: 'black',
-        pos: { x: null, y: null }
+        pos: SetLinePos(idx),
+        isDrag: false
     })
 
     //Switch to the new line
     gMeme.selectedLineIdx = (gMeme.lines).length - 1;
 };
+
+function SetLinePos(idx) {
+    if (idx === 0) return { x: gElCanvas.width / 2, y: 30 }
+
+    if (idx === 1) return { x: gElCanvas.width / 2, y: gElCanvas.height - 30 }
+    else if (idx > 1) return { x: gElCanvas.width / 2, y: gElCanvas.height / 2 }
+}
 
 function removeLine() {
     (gMeme.lines).splice(gMeme.selectedLineIdx, 1);
@@ -102,14 +100,24 @@ function getImgId() {
     return gImgs.map(img => img.id);
 }
 
-function onSetLinePos(x, y, lineIdx) {
-    gMeme.lines[lineIdx].pos.x = x;
-    gMeme.lines[lineIdx].pos.y = y;
+
+function isLineClicked(clickedPos) {
+    const idx = (gMeme.lines).findIndex(line => {
+        var txt = gCtx.measureText(line.txt);
+        return (Math.abs(clickedPos.x - line.pos.x) <= txt.width && Math.abs(clickedPos.y - line.pos.y) <= line.size);
+    })
+    if (idx === -1) return false;
+    gMeme.selectedLineIdx = idx;
+    return true;
 }
 
 
-//Upadte gMeme text line
-// function setLineTxt(line) {
-//     var lineIdx = gMeme.selectedLineIdx;
-//     gMeme.lines[lineIdx].txt = line;
-// }
+function setLineDrag(isDrag) {
+    var memeAtrr = gMeme.lines[gMeme.selectedLineIdx];
+    memeAtrr.isDrag = isDrag;
+}
+function moveLine(dx, dy) {
+    gMeme.lines[gMeme.selectedLineIdx].pos.x += dx;
+    gMeme.lines[gMeme.selectedLineIdx].pos.y += dy;
+}
+
