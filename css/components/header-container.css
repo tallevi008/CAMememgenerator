@@ -14,7 +14,7 @@ font-family: pop-medium,serif;
 .main-header .logo{
     font-size: 1.80rem;
     text-transform: uppercase;
-    margin-inline-start: 7.62rem;
+    margin-inline-start: 1.62rem;
 }
 .main-header .nav-container{
     width: 40%;
@@ -40,6 +40,22 @@ font-family: pop-medium,serif;
     color: #ded7d7;
 }
 
+ .main-header .btn-hide{
+    display:none; 
+} 
 
+.main-header .btn-menu{
+    font-family: pop-medium;
+    color: inherit;
+    font-size: 18px;
+    padding: 6px;
+    border-radius: 50%;
+    border: 2px solid #233;
+    background-color: var(--header-col2);
+}
+
+.main-header .btn-menu:hover{
+    cursor: pointer;
+}
 
 

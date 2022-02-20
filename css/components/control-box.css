@@ -1,0 +1,76 @@
+.control-box > *{
+font-family: pop-bold;
+border-radius: 10px;
+align-items: center;
+justify-content: center;
+}
+
+.control-box >  button:hover{
+    cursor: pointer;
+}
+
+.control-box:not(:first-child){
+    align-items: center;
+    justify-items: center;
+}
+
+.control-box > button{
+    height: 3rem;
+    width: 3rem;
+}
+
+.control-box> [name="line-text"]{
+  grid-row: 1;
+    grid-column: 1/ 5;
+    text-align: center;
+    width: 18.5rem;
+    height: 3.5rem;
+    margin: 9px;
+    border: 5px solid #b7a3a3;
+}
+
+.control-box> [name="switch-line"]{
+    grid-row: 2;
+    grid-column: 2;
+    color: #EBEEF3;
+    background-color:  #0C98BB;
+}
+
+.control-box > [name="add-line"]{
+    grid-row: 2;
+    grid-column: 3;
+    background-color:  #37B34A;
+    color: #EBEEF3;
+}
+
+.control-box > [name="remove-line"]{
+    grid-row: 2;
+    grid-column: 4;
+    color: #EBEEF3;
+   background-color: #CF1D37 ;
+
+}    
+
+.control-box > [name="font-increase"]{
+    grid-row: 3;
+    grid-column: 1;
+}
+.control-box > [name="font-decrease"]{
+    grid-row: 3;
+    grid-column: 2;
+}
+
+.control-box > [name="stroke-color"]{
+    grid-row: 3;
+    grid-column: 3;
+    justify-self: center;
+}
+.control-box > [name="font-color"]{
+    grid-row: 3;
+    grid-column: 4;
+}
+
+.control-box > [type="color"]:hover{
+    cursor: pointer;
+}
+

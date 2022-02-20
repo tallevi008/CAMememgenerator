@@ -1,32 +1,44 @@
-@media (max-width: 1000px){
-    .meme-generator-layout {
-        grid-template-rows: repeat(3,1fr);
-        grid-template-columns: repeat(2,1fr);
-        margin: 1.8rem auto;
-        column-gap: 1.81rem;
-        height: inherit;
-        align-items: center;
-        justify-content: center;
-        width: 36.62rem;
-        height: 36.62rem;
+
+@media (max-width: 840px){
+
+    .meme-generator-container{
+        flex-direction: column;
     }
-}
-@media (max-width: 770px){
+
+    .control-box-layout {
+    padding-bottom: 0.62rem;
+    margin-top: 3px;
+    row-gap: 0.31rem;
+    }
+
+ 
+} 
+
+@media (max-width: 680px){
+    .main-header .btn-hide{
+        display:inline-block; 
+    }       
+        
+        .main-header .nav-container  {
+            width: 10%;
+            margin: 0;
+        }
+   
     .main-nav {
         position: fixed;
         top: 0;
         right: 0;
         flex-direction: column;
-        background-color: rgb(255 255 255 / 90%);
+        background-color: var(--header-col2);
         height: 100vh;
         min-width: 220px;
-        border-left: solid 1px var(--clr6);
+        border-left: solid 2px var(--header-col1);
         transform: translateX(100%);
         transition: transform .6s, box-shadow .6s;
     }
     body.menu-open .main-nav {
         transform: translateX(0);
-        box-shadow: -10px 0px 13px rgb(0 0 0 / 16%);
+        box-shadow: -10px 0px 13px rgba(252, 214, 214, 0.16);
     }
     .main-header .main-nav a {
         display: block;
@@ -37,9 +49,18 @@
         background-color: var(--clr4);
     }
     .main-header .main-nav li {
-        border-bottom: solid 1px var(--clr6);
+        border-bottom: solid 1px var(--header-col1);
     }
-}
+   
 }
 
+@media (max-width: 550px){
+    .main-header .btn-menu{
+    margin-left: -29px
+    }
+
+    .main-header .logo {
+        font-size: 1.3rem;
+    }
+}
 

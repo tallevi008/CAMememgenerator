@@ -6,12 +6,13 @@
 @import'basic/base.css';
 @import'basic/helpers.css';
 @import'basic/layouts.css';
-@import'basic/media-queries.css';
 
 /*Components */
 @import'components/header-container.css';
 @import'components/gallery-container.css';
 @import'components/meme-generator-container.css';
-@import'components/form.css';
+@import'components/control-box.css';
+@import'components/screen.css';
+@import'basic/media-queries.css';
 
 

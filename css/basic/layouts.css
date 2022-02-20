@@ -5,20 +5,18 @@
 }
 
 .meme-generator-layout{
-    grid-template-rows: repeat(3,1fr);
-    grid-template-columns: repeat(2,1fr);
     margin: 1.8rem auto;
-    column-gap: 0.81rem;
+    column-gap: 2rem;
     height: inherit;
     align-items: center;
     justify-content: center;
 
 }
 
-.form-layout {
+.control-box-layout {
   height: 100%;
     grid-template-rows: auto;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(4,1fr);
     column-gap: 0.31rem;
     align-items: center;
 }

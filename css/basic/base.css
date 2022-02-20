@@ -13,3 +13,10 @@ body{
     background-color: #223;
 }
 
+footer{
+    color: inherit;
+    font-family: pop-bold;
+    text-align: center;
+    font-size: 15px;
+   color: var(--header-col2);
+}
